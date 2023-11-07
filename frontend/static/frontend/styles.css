@@ -1,3 +1,6 @@
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./frontend/src/styles.css ***!
+  \*********************************************************************************************************************/
 /*! tailwindcss v2.2.17 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -202,7 +205,9 @@ select { /* 1 */
 Correct the inability to style clickable types in iOS and Safari.
 */
 
-button {
+button,
+[type='button'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -401,11 +406,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   color: #a1a1aa;
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  color: #a1a1aa;
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -530,38 +530,82 @@ video {
   border-color: currentColor;
 }
 
-.m-auto {
-  margin: auto;
+.container {
+  width: 100%;
 }
 
-.flex {
-  display: flex;
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.block {
+  display: block;
 }
 
 .table {
   display: table;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.w-full {
+  width: 100%;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
   }
 }
 
@@ -572,72 +616,42 @@ video {
   }
 }
 
-@-webkit-keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
 @keyframes pulse {
   50% {
     opacity: .5;
   }
 }
 
-@-webkit-keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
-.text-center {
-  text-align: center;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.border {
+  border-width: 1px;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .font-bold {
   font-weight: 700;
-}
-
-.text-django {
-  --tw-text-opacity: 1;
-  color: rgba(9, 46, 32, var(--tw-text-opacity));
-}
-
-.text-react {
-  --tw-text-opacity: 1;
-  color: rgba(97, 219, 251, var(--tw-text-opacity));
-}
-
-.text-tailwind {
-  --tw-text-opacity: 1;
-  color: rgba(0, 180, 182, var(--tw-text-opacity));
 }
 
 *, ::before, ::after {
@@ -657,10 +671,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 1024px) {
